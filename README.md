@@ -1,7 +1,8 @@
 # Covid19-Global-Dashboard-Using-Azure-Cloud
 In This Project I used Azure Cloud to create DB, Extract Data From Browse and Data Analysis After This I used Power BI to Visualization my Data By Dashboard
+---
 ![Dashboard Overview](Results/Dashboard.png)
-
+---
 ---
 
 # Microsoft Azure
@@ -33,6 +34,7 @@ Taking DataSet From Browse in Workspace
 
 ### • DataSet Added Successfuly
 The Data has been added in file and workspace
+
 ![Dataset](./Results/Correct-Adding.png)
 
 ---
