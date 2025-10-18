@@ -60,7 +60,7 @@ This Step is more importanat to Visualize Data in Power BI
 ---
 
 ### • Create View Covid Trend
-This View Groubed Analysis By Year To Take Info about each year
+This View Groubed Analysis By Date To Take Info about each date
 ![View-Trend](./Tasks/vu-covid-trend.png)
 ![View-Trend](./Results/vu-date-trend.png)
 
