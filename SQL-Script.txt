@@ -1,0 +1,73 @@
+INSERT INTO COVID_INFO
+SELECT
+    id,
+    CAST (updated AS DATE) AS updated_report,
+    confirmed,
+    deaths,
+    recovered,
+    latitude,
+    longitude,
+    country_region,
+    admin_region_1
+from raw_data  
+
+
+
+ 
+CREATE VIEW viu_total
+ AS
+ SELECT
+   sum (CAST (confirmed AS BIGINT) / 1000) as total_confirmed ,   
+   sum (CAST (deaths AS BIGINT) / 1000) as total_deaths,
+   sum (CAST (recovered AS BIGINT) / 1000) as total_recovered,
+   sum (CAST (confirmed AS BIGINT) / 1000) - (sum (CAST (deaths AS BIGINT) / 1000)+sum (CAST (recovered AS BIGINT) / 1000)) as total_active
+FROM COVID_INFO
+
+
+
+
+CREATE VIEW vu_top_contries
+as
+SELECT
+   top (10)
+   country_region,
+   sum (CAST (confirmed AS BIGINT) /1000 ) as total_confirmed,
+   sum (CAST (deaths AS BIGINT) /1000 ) as total_deaths
+FROM COVID_INFO
+where country_region != 'Worldwide'
+GROUP by country_region
+ORDER BY total_confirmed desc
+
+
+
+
+CREATE  VIEW vu_location
+as
+SELECT top (10) country_region ,
+       sum (cast (confirmed as BIGINT) /1000) as total_confirmed
+FROM COVID_INFO
+where country_region != 'Worldwide'
+GROUP BY country_region
+ORDER by total_confirmed DESC
+
+
+
+
+CREATE VIEW vu_covid_trend
+as
+SELECT updated_report ,
+       sum (cast (confirmed as BIGINT) /1000) as total_confirmed,
+       sum (cast (deaths as BIGINT) /1000) as total_deaths,
+       sum (cast (recovered as BIGINT) /1000) as total_recovered
+FROM COVID_INFO
+GROUP BY updated_report
+
+
+
+
+
+
+
+
+
+ 
