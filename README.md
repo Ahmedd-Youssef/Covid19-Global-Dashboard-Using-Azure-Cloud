@@ -43,7 +43,7 @@ The Data has been added in file and workspace
 
 ### • Create Table Covid-Info Taking Data From DataSet
 This Table To limit Data from Large DataSet Covid19-Golabal
-![Dataset](./Tasks/Add-Dataset.png)
+![Dataset](./Tasks/Create-Table.png)
 ![Dataset](./Results/result-covidinfo.png)
 
 ---
